@@ -1,0 +1,25 @@
+{
+  "name": "Pulse Civic MVP",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "postCreateCommand": "npm install && npm run seed:demo",
+  "postAttachCommand": "bash .devcontainer/start-dev.sh",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Pulse MVP",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["README.md"]
+    },
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "ms-playwright.playwright",
+        "bradlc.vscode-tailwindcss"
+      ]
+    }
+  }
+}

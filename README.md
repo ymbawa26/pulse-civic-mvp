@@ -17,6 +17,13 @@
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-Strict-3178C6" />
   <img alt="Tests" src="https://img.shields.io/badge/Tests-23%20passing-1f7a4d" />
   <img alt="MVP" src="https://img.shields.io/badge/Stage-Production%20quality%20MVP-2e6e71" />
+  <img alt="CI" src="https://img.shields.io/github/actions/workflow/status/ymbawa26/pulse-civic-mvp/ci.yml?branch=main&label=GitHub%20CI" />
+</p>
+
+<p align="center">
+  <a href="https://codespaces.new/ymbawa26/pulse-civic-mvp">
+    <img src="https://github.com/codespaces/badge.svg" alt="Open in GitHub Codespaces" />
+  </a>
 </p>
 
 ## Why This Is Different
@@ -88,6 +95,19 @@ npm run dev
 Then visit `http://127.0.0.1:3000` on the same machine.
 
 This MVP does not currently have a public hosted deployment URL. The previous localhost hyperlink was misleading on GitHub and has been removed.
+
+## Run On GitHub
+
+GitHub cannot host this full Next.js server app on GitHub Pages because Pulse depends on server actions and a Node runtime.
+
+The GitHub-native way to run it is Codespaces:
+
+1. Click the `Open in GitHub Codespaces` button above.
+2. Wait for the dev container to finish setup.
+3. Pulse will install dependencies, seed demo data, start the app, and open port `3000`.
+4. Open the forwarded preview to use the full MVP from GitHub.
+
+This repo now also includes a GitHub Actions CI workflow so the app validates on GitHub with linting, type checks, build, unit tests, integration tests, and Playwright E2E coverage on every push and pull request.
 
 ## Demo Accounts
 
