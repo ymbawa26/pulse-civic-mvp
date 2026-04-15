@@ -1,0 +1,575 @@
+{
+  "users": [
+    {
+      "id": "user-mod-1",
+      "email": "moderator@pulse.local",
+      "passwordHash": "e31b8c221b5b09bee8cc364b4a42e60d:ff88b3c4e0c52c30789b5b3a15fd420f2525b354c4235dcd566daa9970660d03f7d5c7d55205ced5b6836194e6f138fa76d6b7fcb96a0fcac3aa67e54d5740ef",
+      "displayName": "Ari Moderator",
+      "pseudonym": "Ari",
+      "role": "moderator",
+      "region": "Rivergate",
+      "createdAt": "2026-04-15T12:00:00.000Z",
+      "preferences": {
+        "homeLabel": "Rivergate",
+        "emailAlerts": true,
+        "privacyDefault": "pseudonymous"
+      }
+    },
+    {
+      "id": "user-res-1",
+      "email": "sam@pulse.local",
+      "passwordHash": "dae14bc0e567b35274d7a865db0dab8e:b598451289bf604ba70ba4648bdf8bce9cfe8f51ed39ec7f039d033fac7ea54f2d08ef74fc80fae1d8b381dfa57a14825cb353cfb5fdec768d9a2f15383324ae",
+      "displayName": "Sam Rivera",
+      "pseudonym": "North Oak Tenant",
+      "role": "resident",
+      "region": "Rivergate",
+      "createdAt": "2026-04-15T12:00:00.000Z",
+      "preferences": {
+        "homeLabel": "North Oak",
+        "emailAlerts": true,
+        "privacyDefault": "anonymous"
+      }
+    },
+    {
+      "id": "user-res-2",
+      "email": "jade@pulse.local",
+      "passwordHash": "ddb8a29dcf9d6ac7bd6a49f584e45c81:f364211819d1996f71b0fa4bf765b9298fd4eb69722c17e94a8b50997e65366f838447952c61cef20880b704867ae613c64196bfe8c6e0a365d842a47456db48",
+      "displayName": "Jade Porter",
+      "pseudonym": "Campus Neighbor",
+      "role": "resident",
+      "region": "Rivergate",
+      "createdAt": "2026-04-15T12:00:00.000Z",
+      "preferences": {
+        "homeLabel": "Hillview",
+        "emailAlerts": false,
+        "privacyDefault": "pseudonymous"
+      }
+    }
+  ],
+  "reports": [
+    {
+      "id": "report-housing-1",
+      "reporterUserId": "user-res-1",
+      "category": "Housing",
+      "title": "Repeated mold and ceiling leaks in Eastline Terrace",
+      "description": "Water has been leaking through the hallway ceiling for three weeks and residents are seeing mold spread near vents. Maintenance responses have been delayed.",
+      "locationText": "Eastline Terrace apartments",
+      "latitude": 40.759,
+      "longitude": -74.004,
+      "createdAt": "2026-04-02T10:00:00.000Z",
+      "occurrenceDate": "2026-04-01",
+      "evidenceFileName": "seed-leak.svg",
+      "evidencePath": "/uploads/seed-leak.svg",
+      "privacyMode": "pseudonymous",
+      "allowMatching": true,
+      "allowJoiningActionRoom": true,
+      "status": "matched",
+      "moderationFlags": [],
+      "institutionTag": "Eastline Terrace",
+      "severityLevel": "high",
+      "duplicateOfReportId": null,
+      "approximateLocationLabel": "Eastline Terrace apartments",
+      "normalizedKeywords": [
+        "been",
+        "ceiling",
+        "delayed",
+        "eastline",
+        "hallway",
+        "leaking",
+        "leaks",
+        "maintenance",
+        "mold",
+        "near",
+        "repeated",
+        "residents",
+        "responses",
+        "seeing",
+        "spread",
+        "terrace",
+        "three",
+        "through",
+        "vents",
+        "water",
+        "weeks"
+      ]
+    },
+    {
+      "id": "report-housing-2",
+      "reporterUserId": "user-res-2",
+      "category": "Housing",
+      "title": "No heat and mold complaints going unanswered",
+      "description": "Tenants in the Eastline Terrace area have reported recurring heat outages and mold in shared spaces. The property office keeps closing tickets without repairs.",
+      "locationText": "Near Eastline Terrace",
+      "latitude": 40.761,
+      "longitude": -74.002,
+      "createdAt": "2026-04-07T09:30:00.000Z",
+      "occurrenceDate": "2026-04-05",
+      "evidenceFileName": null,
+      "evidencePath": null,
+      "privacyMode": "anonymous",
+      "allowMatching": true,
+      "allowJoiningActionRoom": true,
+      "status": "matched",
+      "moderationFlags": [],
+      "institutionTag": "Eastline Terrace",
+      "severityLevel": "high",
+      "duplicateOfReportId": null,
+      "approximateLocationLabel": "Near Eastline Terrace",
+      "normalizedKeywords": [
+        "area",
+        "closing",
+        "complaints",
+        "eastline",
+        "going",
+        "heat",
+        "keeps",
+        "mold",
+        "office",
+        "outages",
+        "property",
+        "recurring",
+        "repairs",
+        "reported",
+        "shared",
+        "spaces",
+        "tenants",
+        "terrace",
+        "tickets",
+        "unanswered",
+        "without"
+      ]
+    },
+    {
+      "id": "report-campus-1",
+      "reporterUserId": "user-res-2",
+      "category": "Campus",
+      "title": "Library elevator outage keeps returning",
+      "description": "The main library elevator has been out multiple times this month, making upper floors inaccessible for students who need step-free access.",
+      "locationText": "Rivergate University library",
+      "latitude": 40.744,
+      "longitude": -73.982,
+      "createdAt": "2026-04-09T13:20:00.000Z",
+      "occurrenceDate": "2026-04-09",
+      "evidenceFileName": null,
+      "evidencePath": null,
+      "privacyMode": "named",
+      "allowMatching": true,
+      "allowJoiningActionRoom": true,
+      "status": "matched",
+      "moderationFlags": [],
+      "institutionTag": "Rivergate University",
+      "severityLevel": "medium",
+      "duplicateOfReportId": null,
+      "approximateLocationLabel": "Rivergate University library",
+      "normalizedKeywords": [
+        "access",
+        "been",
+        "elevator",
+        "floors",
+        "free",
+        "inaccessible",
+        "keeps",
+        "library",
+        "main",
+        "making",
+        "month",
+        "multiple",
+        "need",
+        "out",
+        "outage",
+        "returning",
+        "rivergate",
+        "step",
+        "students",
+        "times",
+        "university",
+        "upper",
+        "who"
+      ]
+    },
+    {
+      "id": "report-campus-2",
+      "reporterUserId": "user-res-1",
+      "category": "Campus",
+      "title": "Accessibility issue at campus library elevator",
+      "description": "The elevator near the library entrance was offline again this week. Students using mobility devices were redirected without a clear alternative.",
+      "locationText": "Campus library entrance",
+      "latitude": 40.745,
+      "longitude": -73.983,
+      "createdAt": "2026-04-12T15:00:00.000Z",
+      "occurrenceDate": "2026-04-12",
+      "evidenceFileName": null,
+      "evidencePath": null,
+      "privacyMode": "pseudonymous",
+      "allowMatching": true,
+      "allowJoiningActionRoom": true,
+      "status": "matched",
+      "moderationFlags": [],
+      "institutionTag": "Rivergate University",
+      "severityLevel": "medium",
+      "duplicateOfReportId": null,
+      "approximateLocationLabel": "Campus library entrance",
+      "normalizedKeywords": [
+        "accessibility",
+        "again",
+        "alternative",
+        "campus",
+        "clear",
+        "devices",
+        "elevator",
+        "entrance",
+        "issue",
+        "library",
+        "mobility",
+        "near",
+        "offline",
+        "redirected",
+        "rivergate",
+        "students",
+        "university",
+        "using",
+        "week",
+        "without"
+      ]
+    },
+    {
+      "id": "report-safety-1",
+      "reporterUserId": null,
+      "category": "Public Safety",
+      "title": "Bus stop lighting has failed for two weeks",
+      "description": "The bus stop by Harbor Avenue stays dark after sunset, and several riders say they no longer feel safe waiting there alone.",
+      "locationText": "Harbor Avenue transit stop",
+      "latitude": 40.731,
+      "longitude": -74.011,
+      "createdAt": "2026-03-29T19:00:00.000Z",
+      "occurrenceDate": "2026-03-28",
+      "evidenceFileName": null,
+      "evidencePath": null,
+      "privacyMode": "anonymous",
+      "allowMatching": true,
+      "allowJoiningActionRoom": true,
+      "status": "matched",
+      "moderationFlags": [],
+      "institutionTag": "City Transit",
+      "severityLevel": "medium",
+      "duplicateOfReportId": null,
+      "approximateLocationLabel": "SouthWest local area",
+      "normalizedKeywords": [
+        "after",
+        "alone",
+        "avenue",
+        "bus",
+        "city",
+        "dark",
+        "failed",
+        "feel",
+        "harbor",
+        "lighting",
+        "longer",
+        "riders",
+        "safe",
+        "say",
+        "several",
+        "stays",
+        "stop",
+        "sunset",
+        "they",
+        "transit",
+        "two",
+        "waiting",
+        "weeks"
+      ]
+    },
+    {
+      "id": "report-safety-2",
+      "reporterUserId": null,
+      "category": "Public Safety",
+      "title": "Crosswalk light stays out near Harbor Avenue stop",
+      "description": "The crossing light and bus shelter lighting are both out at night. The area has become harder to navigate safely, especially after late shifts.",
+      "locationText": "Near Harbor Avenue stop",
+      "latitude": 40.732,
+      "longitude": -74.009,
+      "createdAt": "2026-04-11T20:15:00.000Z",
+      "occurrenceDate": "2026-04-10",
+      "evidenceFileName": null,
+      "evidencePath": null,
+      "privacyMode": "anonymous",
+      "allowMatching": true,
+      "allowJoiningActionRoom": true,
+      "status": "matched",
+      "moderationFlags": [],
+      "institutionTag": "City Transit",
+      "severityLevel": "medium",
+      "duplicateOfReportId": null,
+      "approximateLocationLabel": "SouthWest local area",
+      "normalizedKeywords": [
+        "after",
+        "area",
+        "avenue",
+        "become",
+        "both",
+        "bus",
+        "city",
+        "crossing",
+        "crosswalk",
+        "especially",
+        "harbor",
+        "harder",
+        "late",
+        "light",
+        "lighting",
+        "navigate",
+        "near",
+        "night",
+        "out",
+        "safely",
+        "shelter",
+        "shifts",
+        "stays",
+        "stop",
+        "transit"
+      ]
+    },
+    {
+      "id": "report-flagged-1",
+      "reporterUserId": null,
+      "category": "Consumer Issues",
+      "title": "Recurring unexplained processing fee",
+      "description": "A local billing service keeps adding a recurring processing fee that is not shown clearly before checkout. Multiple residents have noticed it.",
+      "locationText": "Downtown service center",
+      "latitude": 40.739,
+      "longitude": -73.995,
+      "createdAt": "2026-04-13T11:45:00.000Z",
+      "occurrenceDate": "2026-04-13",
+      "evidenceFileName": null,
+      "evidencePath": null,
+      "privacyMode": "anonymous",
+      "allowMatching": true,
+      "allowJoiningActionRoom": false,
+      "status": "under_review",
+      "moderationFlags": [
+        {
+          "type": "possible_doxxing",
+          "message": "Needs moderator review before any public aggregation."
+        }
+      ],
+      "institutionTag": "CivicPay",
+      "severityLevel": "low",
+      "duplicateOfReportId": null,
+      "approximateLocationLabel": "Downtown service center",
+      "normalizedKeywords": [
+        "adding",
+        "before",
+        "billing",
+        "checkout",
+        "civicpay",
+        "clearly",
+        "fee",
+        "keeps",
+        "local",
+        "multiple",
+        "not",
+        "noticed",
+        "processing",
+        "recurring",
+        "residents",
+        "service",
+        "shown",
+        "unexplained"
+      ]
+    }
+  ],
+  "rooms": [
+    {
+      "id": "room-housing-1",
+      "clusterKey": "housing-eastline-40.76--74.00",
+      "title": "Eastline housing repairs room",
+      "category": "Housing",
+      "approximateLocationLabel": "Eastline Terrace area",
+      "createdAt": "2026-04-15T12:00:00.000Z",
+      "summary": "Residents coordinating around repeated mold, leak, and repair delays in the Eastline area.",
+      "reportIds": [
+        "report-housing-1",
+        "report-housing-2"
+      ],
+      "guidelines": [
+        "Focus on patterns, systems, and institutions rather than attacking private individuals.",
+        "No threats, violence, harassment, or doxxing.",
+        "Share only evidence you are comfortable contributing to a private room.",
+        "Keep location details approximate unless a moderator asks for more context privately.",
+        "Choose lawful next steps and document facts before escalating."
+      ],
+      "suggestedActions": [
+        {
+          "id": "document-more-evidence",
+          "label": "Document more evidence",
+          "description": "Collect dates, photos, and written observations from affected people."
+        },
+        {
+          "id": "contact-responsible-office",
+          "label": "Contact responsible office",
+          "description": "Reach the relevant campus office, landlord, or city department with a clear summary."
+        },
+        {
+          "id": "coordinate-complaint-filing",
+          "label": "Coordinate complaint filing",
+          "description": "File aligned complaints through lawful channels so the pattern is harder to dismiss."
+        },
+        {
+          "id": "seek-legal-aid",
+          "label": "Seek legal aid or tenant support",
+          "description": "Ask a trusted support group or legal clinic to review the pattern and evidence."
+        },
+        {
+          "id": "request-meeting",
+          "label": "Request meeting",
+          "description": "Ask for a meeting with the institution or service owner to review the pattern."
+        },
+        {
+          "id": "prepare-public-statement",
+          "label": "Prepare public statement",
+          "description": "Draft a factual, evidence-based statement if the group decides public outreach is appropriate."
+        }
+      ],
+      "checklist": [
+        {
+          "id": "dated-notes",
+          "label": "Dated notes",
+          "description": "A short timeline of what happened and when."
+        },
+        {
+          "id": "supporting-media",
+          "label": "Supporting media",
+          "description": "Photos, screenshots, or PDF evidence that does not expose private personal information."
+        },
+        {
+          "id": "responsible-office",
+          "label": "Responsible office identified",
+          "description": "The office, landlord, department, or provider that can receive a formal complaint."
+        }
+      ]
+    },
+    {
+      "id": "room-campus-1",
+      "clusterKey": "campus-library-40.74--73.98",
+      "title": "Library accessibility room",
+      "category": "Campus",
+      "approximateLocationLabel": "Rivergate University library",
+      "createdAt": "2026-04-15T12:00:00.000Z",
+      "summary": "Students documenting recurring accessibility disruptions at the library elevator.",
+      "reportIds": [
+        "report-campus-1",
+        "report-campus-2"
+      ],
+      "guidelines": [
+        "Focus on patterns, systems, and institutions rather than attacking private individuals.",
+        "No threats, violence, harassment, or doxxing.",
+        "Share only evidence you are comfortable contributing to a private room.",
+        "Keep location details approximate unless a moderator asks for more context privately.",
+        "Choose lawful next steps and document facts before escalating."
+      ],
+      "suggestedActions": [
+        {
+          "id": "document-more-evidence",
+          "label": "Document more evidence",
+          "description": "Collect dates, photos, and written observations from affected people."
+        },
+        {
+          "id": "contact-responsible-office",
+          "label": "Contact responsible office",
+          "description": "Reach the relevant campus office, landlord, or city department with a clear summary."
+        },
+        {
+          "id": "coordinate-complaint-filing",
+          "label": "Coordinate complaint filing",
+          "description": "File aligned complaints through lawful channels so the pattern is harder to dismiss."
+        },
+        {
+          "id": "seek-legal-aid",
+          "label": "Seek legal aid or tenant support",
+          "description": "Ask a trusted support group or legal clinic to review the pattern and evidence."
+        },
+        {
+          "id": "request-meeting",
+          "label": "Request meeting",
+          "description": "Ask for a meeting with the institution or service owner to review the pattern."
+        },
+        {
+          "id": "prepare-public-statement",
+          "label": "Prepare public statement",
+          "description": "Draft a factual, evidence-based statement if the group decides public outreach is appropriate."
+        }
+      ],
+      "checklist": [
+        {
+          "id": "dated-notes",
+          "label": "Dated notes",
+          "description": "A short timeline of what happened and when."
+        },
+        {
+          "id": "supporting-media",
+          "label": "Supporting media",
+          "description": "Photos, screenshots, or PDF evidence that does not expose private personal information."
+        },
+        {
+          "id": "responsible-office",
+          "label": "Responsible office identified",
+          "description": "The office, landlord, department, or provider that can receive a formal complaint."
+        }
+      ]
+    }
+  ],
+  "roomMembers": [
+    {
+      "roomId": "room-housing-1",
+      "userId": "user-res-1",
+      "reportId": "report-housing-1",
+      "status": "approved",
+      "joinedAt": "2026-04-15T12:00:00.000Z"
+    },
+    {
+      "roomId": "room-campus-1",
+      "userId": "user-res-2",
+      "reportId": "report-campus-1",
+      "status": "approved",
+      "joinedAt": "2026-04-15T12:00:00.000Z"
+    }
+  ],
+  "roomPosts": [
+    {
+      "id": "post-1",
+      "roomId": "room-housing-1",
+      "authorUserId": "user-res-1",
+      "authorDisplayName": "North Oak Tenant",
+      "content": "I uploaded a dated photo set from the hallway leak and added the last three maintenance ticket numbers.",
+      "createdAt": "2026-04-10T12:15:00.000Z"
+    },
+    {
+      "id": "post-2",
+      "roomId": "room-campus-1",
+      "authorUserId": "user-res-2",
+      "authorDisplayName": "Campus Neighbor",
+      "content": "Accessibility office said they need a timeline of each outage before they escalate the repair issue.",
+      "createdAt": "2026-04-12T17:10:00.000Z"
+    }
+  ],
+  "roomVotes": [
+    {
+      "roomId": "room-housing-1",
+      "userId": "user-res-1",
+      "optionId": "coordinate-complaint-filing",
+      "createdAt": "2026-04-15T12:00:00.000Z"
+    }
+  ],
+  "reportFlags": [
+    {
+      "id": "flag-1",
+      "reportId": "report-flagged-1",
+      "flaggedByUserId": "user-res-1",
+      "reason": "Needs review for public pattern safety before aggregation.",
+      "createdAt": "2026-04-15T12:00:00.000Z",
+      "resolvedAt": null
+    }
+  ],
+  "moderationEvents": []
+}

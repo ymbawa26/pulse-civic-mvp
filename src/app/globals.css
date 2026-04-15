@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-page: #f7f5ef;
+  --color-surface: #fdfcf8;
+  --color-surface-strong: #eff1ec;
+  --color-border: #d9ddd5;
+  --color-ink: #15303b;
+  --color-ink-muted: #546773;
+  --color-ink-soft: #8d9da6;
+  --color-accent: #2e6e71;
+  --color-accent-strong: #1f575a;
+  --color-accent-soft: #d8eceb;
+  --color-danger: #8d2f2f;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--color-page);
+  --color-foreground: var(--color-ink);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family:
+    "Avenir Next",
+    "Segoe UI",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family:
+    "Iowan Old Style",
+    "Palatino Linotype",
+    "Book Antiqua",
+    serif;
+  letter-spacing: -0.03em;
+}
+
+a {
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+::selection {
+  background: rgba(46, 110, 113, 0.2);
+}
+
+.page-shell {
+  @apply mx-auto w-full max-w-6xl px-5 md:px-8;
+}
+
+.hero-panel {
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(249, 247, 241, 0.92)),
+    linear-gradient(130deg, rgba(46, 110, 113, 0.08), transparent 60%);
+}
+
+.data-grid {
+  background-image:
+    linear-gradient(rgba(21, 48, 59, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 48, 59, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
 }

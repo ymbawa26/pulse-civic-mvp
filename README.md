@@ -1,36 +1,167 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="./public/pulse-social-preview.svg" alt="Pulse preview" width="100%" />
+</p>
 
-## Getting Started
+<h1 align="center">Pulse</h1>
 
-First, run the development server:
+<p align="center">
+  <strong>Private issue matching for local civic action.</strong>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<p align="center">
+  Pulse helps people privately report recurring local problems, detect whether they are part of a real pattern, and coordinate safely in a private action room.
+</p>
+
+<p align="center">
+  <img alt="Next.js" src="https://img.shields.io/badge/Next.js-16-black" />
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-Strict-3178C6" />
+  <img alt="Tests" src="https://img.shields.io/badge/Tests-23%20passing-1f7a4d" />
+  <img alt="MVP" src="https://img.shields.io/badge/Stage-Production%20quality%20MVP-2e6e71" />
+</p>
+
+## Why This Is Different
+
+Most civic platforms push people toward public outrage.
+
+Pulse is built around a quieter promise:
+
+> When a problem keeps happening, people should know they are not alone.
+
+That means:
+
+- no public feed
+- no likes, reposts, or popularity mechanics
+- no public accusations against private people
+- no exact-address exposure
+- no vague black-box “AI” claims
+
+Instead, Pulse focuses on explainable pattern visibility, evidence, and safe lawful coordination.
+
+## Core Flow
+
+```mermaid
+flowchart LR
+  A["Private report"] --> B["Explainable match check"]
+  B --> C["You are not alone results"]
+  C --> D["Private action room"]
+  B --> E["No nearby match yet"]
+  C --> F["Safe public pattern aggregate"]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What You Can Try Right Now
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Privately submit a housing, campus, safety, or service issue.
+- See whether it matches similar nearby reports.
+- Join a private room if a safe cluster exists.
+- Explore privacy-preserving public pattern summaries.
+- Sign in as a moderator and review flagged reports.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Feature Highlights
 
-## Learn More
+- Private issue reporting with category, approximate location, privacy mode, severity, and optional evidence upload
+- Explainable matching based on category, distance, keyword overlap, and time window
+- Match confidence labels: `Strong match`, `Likely match`, `Weak match`
+- Public pattern explorer that shows approximate local clusters only
+- Private action rooms with discussion, shared evidence checklist, and voting on lawful next steps
+- Safety filters for threats, harassment prompts, phone numbers, and exact-address style content
+- Built-in demo data for housing neglect, campus accessibility issues, and neighborhood safety concerns
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- Zod
+- Vitest
+- Playwright
+- Supabase-ready schema and environment structure
+- Local demo persistence layer for fully working out-of-the-box flows
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Quick Start
 
-## Deploy on Vercel
+```bash
+npm install
+npm run seed:demo
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Open [http://127.0.0.1:3000](http://127.0.0.1:3000)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Demo Accounts
+
+- Resident: `sam@pulse.local` / `PulseDemo123!`
+- Resident: `jade@pulse.local` / `PulseDemo123!`
+- Moderator: `moderator@pulse.local` / `PulseAdmin123!`
+
+## Scripts
+
+- `npm run dev`
+- `npm run build`
+- `npm run start`
+- `npm run seed:demo`
+- `npm run lint`
+- `npm run typecheck`
+- `npm run test:unit`
+- `npm run test:integration`
+- `npm run test:e2e`
+- `npm run verify`
+
+## Current Status
+
+This repo is a fully working, tested local MVP.
+
+What is complete:
+
+- working end-to-end app in `demo` mode
+- seeded local data
+- unit, integration, and E2E test coverage
+- Supabase SQL schema and seed files for migration planning
+
+What is still intentionally unfinished:
+
+- the live Supabase repository implementation behind `NEXT_PUBLIC_APP_MODE=supabase`
+
+That means you can run and demo the product today, but a true hosted production deployment still needs the real Supabase adapter completed.
+
+## Project Structure
+
+- `src/app` app routes and pages
+- `src/components` UI, layouts, and forms
+- `src/lib/actions` server actions
+- `src/lib/data` repository, seed logic, and local demo storage
+- `src/lib/matching.ts` explainable matching engine
+- `src/lib/moderation.ts` safety checks
+- `src/tests` unit, integration, and E2E suites
+- `supabase/migrations` SQL schema
+- `docs/PRODUCT_RATIONALE.md` architecture notes
+- `docs/VERIFICATION_REPORT.md` verification summary
+
+## Design Direction
+
+Pulse deliberately avoids loud activist styling or chaotic social-media energy.
+
+The visual direction is:
+
+- calm
+- trustworthy
+- modern
+- civic
+- privacy-first
+
+## Verification Snapshot
+
+Verified locally with:
+
+```bash
+npm run seed:demo
+npm run lint
+npm run typecheck
+npm run build
+npm run test:unit
+npm run test:integration
+npm run test:e2e
+```
+
+## Next Production Step
+
+If you want this deployed for real, the next meaningful engineering step is finishing the Supabase-backed repository implementation and wiring live auth/storage/database access behind the existing repository boundary.
