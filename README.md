@@ -85,7 +85,9 @@ npm run seed:demo
 npm run dev
 ```
 
-Open [http://127.0.0.1:3000](http://127.0.0.1:3000)
+Then visit `http://127.0.0.1:3000` on the same machine.
+
+This MVP does not currently have a public hosted deployment URL. The previous localhost hyperlink was misleading on GitHub and has been removed.
 
 ## Demo Accounts
 
