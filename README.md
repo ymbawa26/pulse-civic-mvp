@@ -10,8 +10,12 @@
 
 <p align="center">
   Pulse helps people privately report recurring local problems, detect whether they are part of a real pattern, and coordinate safely in a private action room.
+</p>
 
-  TRY HERE: https://pulse-civic-mvp.vercel.app
+<p align="center">
+  <a href="https://pulse-civic-mvp.vercel.app"><strong>Live demo</strong></a>
+  ·
+  <a href="https://codespaces.new/ymbawa26/pulse-civic-mvp"><strong>Open in Codespaces</strong></a>
 </p>
 
 <p align="center">
@@ -20,12 +24,6 @@
   <img alt="Tests" src="https://img.shields.io/badge/Tests-24%20passing-1f7a4d" />
   <img alt="MVP" src="https://img.shields.io/badge/Stage-Production%20quality%20MVP-2e6e71" />
   <img alt="CI" src="https://img.shields.io/github/actions/workflow/status/ymbawa26/pulse-civic-mvp/ci.yml?branch=main&label=GitHub%20CI" />
-</p>
-
-<p align="center">
-  <a href="https://codespaces.new/ymbawa26/pulse-civic-mvp">
-    <img src="https://github.com/codespaces/badge.svg" alt="Open in GitHub Codespaces" />
-  </a>
 </p>
 
 ## Why This Is Different
@@ -42,7 +40,7 @@ That means:
 - no likes, reposts, or popularity mechanics
 - no public accusations against private people
 - no exact-address exposure
-- no vague black-box “AI” claims
+- no vague black-box AI claims
 
 Instead, Pulse focuses on explainable pattern visibility, evidence, and safe lawful coordination.
 
@@ -59,22 +57,22 @@ flowchart LR
 
 ## What You Can Try Right Now
 
-- Privately submit a housing, campus, safety, or service issue.
-- See whether it matches similar nearby reports.
-- Join a private room if a safe cluster exists.
-- Explore privacy-preserving public pattern summaries.
-- Sign in as a moderator and review flagged reports.
+- privately submit a housing, campus, safety, or service issue
+- see whether it matches similar nearby reports
+- join a private room if a safe cluster exists
+- explore privacy-preserving public pattern summaries
+- sign in as a moderator and review flagged reports
 
 ## Feature Highlights
 
-- Private issue reporting with category, approximate location, privacy mode, severity, and optional evidence upload
-- Explainable matching based on category, distance, keyword overlap, time window, and a small transparent neural similarity signal
-- Match confidence labels: `Strong match`, `Likely match`, `Weak match`
-- Match results now show a score breakdown for `Distance`, `Keywords`, `Timing`, and `Semantic signal`
-- Public pattern explorer that shows approximate local clusters only
-- Private action rooms with discussion, shared evidence checklist, and voting on lawful next steps
-- Safety filters for threats, harassment prompts, phone numbers, and exact-address style content
-- Built-in demo data for housing neglect, campus accessibility issues, and neighborhood safety concerns
+- private issue reporting with category, approximate location, privacy mode, severity, and optional evidence upload
+- explainable matching based on category, distance, keyword overlap, time window, and a small transparent neural similarity signal
+- match confidence labels: `Strong match`, `Likely match`, `Weak match`
+- score breakdowns for `Distance`, `Keywords`, `Timing`, and `Semantic signal`
+- public pattern explorer that shows approximate local clusters only
+- private action rooms with discussion, shared evidence checklist, and voting on lawful next steps
+- safety filters for threats, harassment prompts, phone numbers, and exact-address style content
+- built-in demo data for housing neglect, campus accessibility issues, and neighborhood safety concerns
 
 ## Tech Stack
 
@@ -85,9 +83,9 @@ flowchart LR
 - Vitest
 - Playwright
 - Supabase-ready schema and environment structure
-- Local demo persistence layer for fully working out-of-the-box flows
+- local demo persistence layer for fully working out-of-the-box flows
 
-## Quick Start
+## Try It Locally
 
 ```bash
 npm install
@@ -95,22 +93,17 @@ npm run seed:demo
 npm run dev
 ```
 
-Then visit `http://127.0.0.1:3000` on the same machine.
+Then visit `http://127.0.0.1:3000`.
 
-This MVP does not currently have a public hosted deployment URL. The previous localhost hyperlink was misleading on GitHub and has been removed.
+## Try It On Another Computer
 
-## Run On GitHub
+The easiest GitHub-native path is Codespaces:
 
-GitHub cannot host this full Next.js server app on GitHub Pages because Pulse depends on server actions and a Node runtime.
-
-The GitHub-native way to run it is Codespaces:
-
-1. Click the `Open in GitHub Codespaces` button above.
-2. Wait for the dev container to finish setup.
-3. Pulse will install dependencies, seed demo data, start the app, and open port `3000`.
-4. Open the forwarded preview to use the full MVP from GitHub.
-
-This repo now also includes a GitHub Actions CI workflow so the app validates on GitHub with linting, type checks, build, unit tests, integration tests, and Playwright E2E coverage on every push and pull request.
+1. Click `Open in Codespaces` above.
+2. Wait for the workspace to start.
+3. Run `npm install`.
+4. Run `npm run seed:demo`.
+5. Run `npm run dev` and open the forwarded port.
 
 ## Demo Accounts
 
@@ -133,7 +126,7 @@ This repo now also includes a GitHub Actions CI workflow so the app validates on
 
 ## Current Status
 
-This repo is a fully working, tested local MVP.
+This repo is a working, tested MVP with a public hosted demo and a strong local demo path.
 
 What is complete:
 
@@ -145,8 +138,6 @@ What is complete:
 What is still intentionally unfinished:
 
 - the live Supabase repository implementation behind `NEXT_PUBLIC_APP_MODE=supabase`
-
-That means you can run and demo the product today, but a true hosted production deployment still needs the real Supabase adapter completed.
 
 ## Project Structure
 
@@ -161,18 +152,6 @@ That means you can run and demo the product today, but a true hosted production 
 - `docs/PRODUCT_RATIONALE.md` architecture notes
 - `docs/VERIFICATION_REPORT.md` verification summary
 
-## Design Direction
-
-Pulse deliberately avoids loud activist styling or chaotic social-media energy.
-
-The visual direction is:
-
-- calm
-- trustworthy
-- modern
-- civic
-- privacy-first
-
 ## Verification Snapshot
 
 Verified locally with:
@@ -186,7 +165,3 @@ npm run test:unit
 npm run test:integration
 npm run test:e2e
 ```
-
-## Next Production Step
-
-If you want this deployed for real, the next meaningful engineering step is finishing the Supabase-backed repository implementation and wiring live auth/storage/database access behind the existing repository boundary.
