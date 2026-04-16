@@ -10,6 +10,8 @@
 
 <p align="center">
   Pulse helps people privately report recurring local problems, detect whether they are part of a real pattern, and coordinate safely in a private action room.
+
+  TRY HERE: https://pulse-civic-mvp.vercel.app
 </p>
 
 <p align="center">
