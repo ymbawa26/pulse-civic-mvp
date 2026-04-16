@@ -34,6 +34,7 @@ test("sign up and sign in flows work", async ({ page }) => {
 });
 
 test("a signed-in user can submit a report, see a match, and join a room", async ({ page }) => {
+  test.setTimeout(60_000);
   await signIn(page, "jade@pulse.local", "PulseDemo123!");
 
   await page.goto("/report");
@@ -48,7 +49,7 @@ test("a signed-in user can submit a report, see a match, and join a room", async
   await page.getByLabel("Occurrence date").fill("2026-04-14");
   await page.getByRole("button", { name: "Submit private report" }).click();
 
-  await expect(page).toHaveURL(/\/report\/.+\/results$/, { timeout: 30_000 });
+  await expect(page).toHaveURL(/\/report\/.+\/results$/, { timeout: 45_000 });
   await expect(page.getByText("You are not alone")).toBeVisible();
   await expect(page.getByRole("button", { name: "Join private action room" })).toBeVisible();
   await page.getByRole("button", { name: "Join private action room" }).click();

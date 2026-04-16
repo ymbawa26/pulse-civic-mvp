@@ -1,5 +1,6 @@
 import { differenceInCalendarDays, parseISO } from "date-fns";
 
+import { scoreNeuralSimilarity } from "@/lib/ai/neural-similarity";
 import { MATCH_RADIUS_MILES, MATCH_WINDOW_DAYS } from "@/lib/constants";
 import { formatDistance, haversineMiles } from "@/lib/geo";
 import { type IssueReport, type MatchCandidate, type MatchConfidence } from "@/lib/types";
@@ -108,7 +109,17 @@ export function compareReports(source: IssueReport, candidate: IssueReport) {
   const distanceScore = clamp((1 - distanceMiles / MATCH_RADIUS_MILES) * 100, 0, 100);
   const timeScore = clamp((1 - daysApart / MATCH_WINDOW_DAYS) * 100, 0, 100);
   const lexicalScore = keywordScore * 100;
-  const totalScore = distanceScore * 0.38 + timeScore * 0.22 + lexicalScore * 0.4;
+  const semanticScore = scoreNeuralSimilarity({
+    leftText: `${source.title} ${source.description} ${source.institutionTag ?? ""}`,
+    rightText: `${candidate.title} ${candidate.description} ${candidate.institutionTag ?? ""}`,
+    keywordScore,
+    institutionMatch:
+      Boolean(source.institutionTag) &&
+      Boolean(candidate.institutionTag) &&
+      source.institutionTag?.toLowerCase() === candidate.institutionTag?.toLowerCase(),
+    severityMatch: source.severityLevel === candidate.severityLevel,
+  });
+  const totalScore = distanceScore * 0.3 + timeScore * 0.18 + lexicalScore * 0.22 + semanticScore * 0.3;
   const confidence = classifyMatchConfidence(totalScore);
 
   if (!confidence) {
@@ -119,8 +130,17 @@ export function compareReports(source: IssueReport, candidate: IssueReport) {
     `Same ${source.category.toLowerCase()} category`,
     `Reported ${formatDistance(distanceMiles)} away`,
     `${Math.round(keywordScore * 100)}% keyword overlap`,
+    `Semantic similarity signal ${Math.round(semanticScore)}% from similar wording and context`,
     `Within ${daysApart} day${daysApart === 1 ? "" : "s"} of the reported occurrence`,
   ];
+
+  if (
+    source.institutionTag &&
+    candidate.institutionTag &&
+    source.institutionTag.toLowerCase() === candidate.institutionTag.toLowerCase()
+  ) {
+    reasoning.splice(1, 0, "Shared institution or context tag");
+  }
 
   return {
     reportId: candidate.id,
@@ -132,6 +152,12 @@ export function compareReports(source: IssueReport, candidate: IssueReport) {
     score: Number(totalScore.toFixed(1)),
     confidence,
     reasoning,
+    scoreBreakdown: {
+      distance: Number(distanceScore.toFixed(1)),
+      time: Number(timeScore.toFixed(1)),
+      keywords: Number(lexicalScore.toFixed(1)),
+      semantic: Number(semanticScore.toFixed(1)),
+    },
   } satisfies MatchCandidate;
 }
 

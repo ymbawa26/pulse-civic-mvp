@@ -32,6 +32,7 @@ describe("demo repository flows", () => {
     expect(summary).not.toBeNull();
     expect(summary?.similarReportsCount).toBeGreaterThan(0);
     expect(summary?.room).not.toBeNull();
+    expect(summary?.matches[0]?.scoreBreakdown.semantic).toBeGreaterThan(50);
 
     const db = await readDatabase();
     expect(db.reports.some((report) => report.id === result.reportId)).toBe(true);
@@ -122,4 +123,3 @@ describe("demo repository flows", () => {
     expect(patterns.some((pattern) => pattern.category === "Consumer Issues")).toBe(false);
   });
 });
-

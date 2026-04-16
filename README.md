@@ -15,7 +15,7 @@
 <p align="center">
   <img alt="Next.js" src="https://img.shields.io/badge/Next.js-16-black" />
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-Strict-3178C6" />
-  <img alt="Tests" src="https://img.shields.io/badge/Tests-23%20passing-1f7a4d" />
+  <img alt="Tests" src="https://img.shields.io/badge/Tests-24%20passing-1f7a4d" />
   <img alt="MVP" src="https://img.shields.io/badge/Stage-Production%20quality%20MVP-2e6e71" />
   <img alt="CI" src="https://img.shields.io/github/actions/workflow/status/ymbawa26/pulse-civic-mvp/ci.yml?branch=main&label=GitHub%20CI" />
 </p>
@@ -66,8 +66,9 @@ flowchart LR
 ## Feature Highlights
 
 - Private issue reporting with category, approximate location, privacy mode, severity, and optional evidence upload
-- Explainable matching based on category, distance, keyword overlap, and time window
+- Explainable matching based on category, distance, keyword overlap, time window, and a small transparent neural similarity signal
 - Match confidence labels: `Strong match`, `Likely match`, `Weak match`
+- Match results now show a score breakdown for `Distance`, `Keywords`, `Timing`, and `Semantic signal`
 - Public pattern explorer that shows approximate local clusters only
 - Private action rooms with discussion, shared evidence checklist, and voting on lawful next steps
 - Safety filters for threats, harassment prompts, phone numbers, and exact-address style content

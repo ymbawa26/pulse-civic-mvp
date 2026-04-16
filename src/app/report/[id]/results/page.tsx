@@ -80,6 +80,24 @@ export default async function ReportResultsPage({
                     <span className="text-sm text-[var(--color-ink-muted)]">{match.score}</span>
                   </div>
                   <p className="mt-2 font-medium">{match.title}</p>
+                  <div className="mt-3 grid grid-cols-2 gap-2 text-xs text-[var(--color-ink-muted)]">
+                    <div className="rounded-2xl border border-[var(--color-border)] px-3 py-2">
+                      <div className="font-semibold text-[var(--color-ink)]">Distance</div>
+                      <div>{Math.round(match.scoreBreakdown.distance)}%</div>
+                    </div>
+                    <div className="rounded-2xl border border-[var(--color-border)] px-3 py-2">
+                      <div className="font-semibold text-[var(--color-ink)]">Keywords</div>
+                      <div>{Math.round(match.scoreBreakdown.keywords)}%</div>
+                    </div>
+                    <div className="rounded-2xl border border-[var(--color-border)] px-3 py-2">
+                      <div className="font-semibold text-[var(--color-ink)]">Timing</div>
+                      <div>{Math.round(match.scoreBreakdown.time)}%</div>
+                    </div>
+                    <div className="rounded-2xl border border-[var(--color-border)] px-3 py-2">
+                      <div className="font-semibold text-[var(--color-ink)]">Semantic signal</div>
+                      <div>{Math.round(match.scoreBreakdown.semantic)}%</div>
+                    </div>
+                  </div>
                   <ul className="mt-3 grid gap-2 text-sm text-[var(--color-ink-muted)]">
                     {match.reasoning.map((reason) => (
                       <li key={reason}>{reason}</li>
@@ -93,6 +111,11 @@ export default async function ReportResultsPage({
                 </div>
               ) : null}
             </div>
+            {summary.matches.length ? (
+              <p className="text-xs leading-6 text-[var(--color-ink-soft)]">
+                Pulse uses distance, timing, keyword overlap, and a small neural similarity model as matching signals. The semantic score helps compare related wording, but it does not verify the underlying claim.
+              </p>
+            ) : null}
           </Card>
 
           <Card className="grid gap-4">

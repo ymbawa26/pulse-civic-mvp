@@ -83,6 +83,14 @@ export interface MatchCandidate {
   score: number;
   confidence: MatchConfidence;
   reasoning: string[];
+  scoreBreakdown: MatchScoreBreakdown;
+}
+
+export interface MatchScoreBreakdown {
+  distance: number;
+  time: number;
+  keywords: number;
+  semantic: number;
 }
 
 export interface MatchSummary {
@@ -289,4 +297,3 @@ export interface AppRepository {
   flagReport(input: FlagReportInput): Promise<ReportFlag>;
   listModerationQueue(): Promise<ModerationQueueItem[]>;
 }
-

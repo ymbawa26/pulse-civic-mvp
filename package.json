@@ -11,7 +11,7 @@
     "seed:demo": "node --import tsx ./scripts/seed-demo.ts",
     "test:unit": "vitest run src/tests/unit",
     "test:integration": "vitest run src/tests/integration",
-    "test:e2e": "playwright test",
+    "test:e2e": "npm run build && playwright test",
     "test": "npm run test:unit && npm run test:integration",
     "verify": "npm run lint && npm run typecheck && npm run test"
   },
