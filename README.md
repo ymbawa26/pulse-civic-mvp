@@ -85,15 +85,7 @@ flowchart LR
 - Supabase-ready schema and environment structure
 - local demo persistence layer for fully working out-of-the-box flows
 
-## Try It Locally
 
-```bash
-npm install
-npm run seed:demo
-npm run dev
-```
-
-Then visit `http://127.0.0.1:3000`.
 
 ## Try It On Another Computer
 
